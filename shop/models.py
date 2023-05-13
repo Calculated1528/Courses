@@ -6,6 +6,9 @@ from django.utils import timezone
 class Category(models.Model):
     title = models.CharField(max_length=255)
     created_at = models.DateField(default=timezone.now)
+    
+    def __str__(self):
+        return str(self.id) + ' ' + self.title 
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
@@ -14,4 +17,7 @@ class Course(models.Model):
     reviews_qty = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     created_at = models.DateField(default=timezone.now)
+    
+    def __str__(self):
+        return str(self.id) + ' ' + self.title 
     
