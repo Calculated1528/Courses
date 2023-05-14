@@ -4,5 +4,8 @@ from .models import Course
 # Create your views here.
 
 def index(request):
-    course = Course.objects.all()
-    return HttpResponse(''.join([str(course) + '<br>' for course in course])) 
+    courses = Course.objects.all()
+    return render(request, 'courses.html', {'course': courses})
+
+def test(request):
+    return HttpResponse('add test')

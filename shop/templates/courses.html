@@ -1,2 +1,23 @@
-table>(thead>td>th*5) (tbody>td>th*5)
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Student Qiantity</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for courses in course %}
+        <tr>
+            <td>{{courses.title}}</td>
+            <td>{{courses.category}}</td>
+            <td>{{courses.price}}</td>
+            <td>{{courses.students_qty}}</td>
+            <td><button>Buy</button></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
