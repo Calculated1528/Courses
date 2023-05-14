@@ -1,8 +1,3 @@
-{% comment %} {% extends 'base.html' %}
-{% block content %}
-{% endblock %}
-
-{% endcomment %}
 {% extends 'base.html' %}
 
 {% block title %}All Courses{% endblock %} 
@@ -21,8 +16,9 @@
     <tbody>
         {% for courses in course %}
         <tr>
-            <td>{{courses.title}}</td>
-            <td>{{courses.category}}</td>
+            <td><a href={% url "shop:single_course" courses.id %}>{{ courses.title }}</a>
+            </td>
+            <td>{{courses.category.title}}</td>
             <td>{{courses.price}}</td>
             <td>{{courses.students_qty}}</td>
             <td><button class="btn btn-primary">Buy</button></td>
