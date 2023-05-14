@@ -1,5 +1,15 @@
-<table>
-    <thead>
+{% comment %} {% extends 'base.html' %}
+{% block content %}
+{% endblock %}
+
+{% endcomment %}
+{% extends 'base.html' %}
+
+{% block title %}All Courses{% endblock %} 
+
+{% block content %}
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
         <tr>
             <th>Title</th>
             <th>Category</th>
@@ -15,9 +25,9 @@
             <td>{{courses.category}}</td>
             <td>{{courses.price}}</td>
             <td>{{courses.students_qty}}</td>
-            <td><button>Buy</button></td>
+            <td><button class="btn btn-primary">Buy</button></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
-
+{% endblock %}
