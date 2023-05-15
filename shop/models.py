@@ -8,7 +8,7 @@ class Category(models.Model):
     created_at = models.DateField(default=timezone.now)
     
     def __str__(self):
-        return str(self.id) + ' ' + self.title 
+        return f'{self.id} {self.title}'
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
@@ -19,5 +19,5 @@ class Course(models.Model):
     created_at = models.DateField(default=timezone.now)
     
     def __str__(self):
-        return str(self.id) + ' ' + self.title 
+        return f'{self.id} {self.title}'
     
