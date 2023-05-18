@@ -10,5 +10,5 @@ urlpatterns = [
 
 app_name = 'account'
 urlpatterns = [
-    path('logout-then-login/', views.logout_then_login, name='logout_then_login')
+    path('login/', views.user_login, name='login')
 ]
