@@ -1,8 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login ,logout
+from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm
 from shop.views import index
+from django.contrib.auth.decorators import login_required
 
 def user_login(request):
     if request.method == 'POST':
@@ -15,9 +16,9 @@ def user_login(request):
                     login(request, user)
                     return index(request)
                 else:
-                    return HttpResponse("Disabled account")
+                    return HttpResponse('Disabled account')
             else:
-                return HttpResponse("Invalid login or password")
+                return HttpResponse('Invalid login or password')
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
