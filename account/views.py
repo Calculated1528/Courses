@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login ,logout
 from .forms import LoginForm
 from shop.views import index
 
@@ -20,4 +20,8 @@ def user_login(request):
                 return HttpResponse("Invalid login or password")
     else:
         form = LoginForm()
-    return render(request, 'auth/login.html', {'form': form})
+    return render(request, 'account/login.html', {'form': form})
+
+def user_logout(request):
+    user_logout = logout(request)
+    return render(request,'account/logout.html')
