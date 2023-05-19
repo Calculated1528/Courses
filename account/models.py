@@ -5,8 +5,8 @@ from django.utils import timezone
 # Create your models here.
 
 class UserInfo(models.Model):
-    phone_number = models.PhoneNumberField()
-    photo = models.ImageField(upload_to='photos/')
+    phone_number = models.IntegerField()
+    #photo = models.ImageField(upload_to='photos/')
 
 # class Roles(models.Model):
 #     name = models.Model(max_length=30); 
@@ -17,7 +17,7 @@ class UserInfo(models.Model):
 
 class Posts(models.Model):  
     moderation_status = models.BooleanField
-    text = models.CharField(max_length=max)
+    text = models.CharField(max_length=5000)
     time = models.DateField()
     title = models.CharField(max_length=100)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
