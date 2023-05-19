@@ -1,5 +1,4 @@
 from django import forms
-from django.contrib.auth import password_validation
 
 class LoginForm(forms.Form):
     username = forms.CharField()
