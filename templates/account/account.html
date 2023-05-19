@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.get_username }} user info{% endblock %} 
+
+{% block content %}
+
+<h1 class="mt-5">{{ user.get_username }}</h1>
+{#<p>{{ user.groups.all.0 }}  </p>#}
+<p><b>E_mail:</b> {{ user.email }}  </p>
+<p><b>Last login:</b> {{ user.last_login }}  </p>
+<p><b>Registration date:</b> {{ user.date_joined }}  </p>
+<p><b>  </b></p>
+<p><b>  </b></p>
+<p><b> <a href={% url "account:change_password" %} class="me-2">Password change</a> </b></p>
+<p><b> <a href={% url "account:logout" %} class="me-2">Logout</a> </b></p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Log out{% endblock %} 
+
+{% block content %}
+
+<h1 class="mt-5">Logout</h1>
+<p><b>Thanks for visiting us.</b></p>
+<p><b>We hope you will return</b></p>
+<a href={% url "account:login" %} class="me-2">Login</a>
+
+{% endblock %}
