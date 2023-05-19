@@ -40,7 +40,7 @@ class Post_comments(models.Model):
     time = models.DateField()
     user_id = models.IntegerField()
     value = models.IntegerField(); 
-""""
+"""
 class Tag2posts(models.Model):
     post = models.ForeignKey(Posts, on_delete=models.CASCADE)
     tag = models.ForeignKey(Tags, on_delete=models.CASCADE)
