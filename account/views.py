@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
-from .forms import LoginForm
+from .forms import LoginForm,UserRegistrationForm
 from shop.views import index
 
 
@@ -45,3 +45,19 @@ def change_password(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'account/registration/change_password.html', {'form': form})
+
+
+def registration(request):
+    if request.method == 'POST':
+        user_form = UserRegistrationForm(request.POST)
+        if user_form.is_valid():
+            # Create a new user object but avoid saving it yet
+            new_user = user_form.save(commit=False)
+            # Set the chosen password
+            new_user.set_password(user_form.cleaned_data['password'])
+            # Save the User object
+            new_user.save()
+            return render(request, 'account/registration/registration_done.html', {'new_user': new_user})
+    else:
+        user_form = UserRegistrationForm()
+    return render(request, 'account/registration/registration.html', {'user_form': user_form})
