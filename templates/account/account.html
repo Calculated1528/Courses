@@ -11,7 +11,7 @@
 <p><b>Registration date:</b> {{ user.date_joined }}  </p>
 <p><b>  </b></p>
 <p><b>  </b></p>
-<p><b> <a href={% url "account:change_password" %} class="me-2">Password change</a> </b></p>
-<p><b> <a href={% url "account:logout" %} class="me-2">Logout</a> </b></p>
+<p><b> <a href={% url "change_password" %} class="me-2">Password change</a> </b></p>
+<p><b> <a href={% url "logout" %} class="me-2">Logout</a> </b></p>
 
 {% endblock %}
