@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shop.apps.ShopConfig',
     'api.apps.ApiConfig',
+    'blog.apps.BlogConfig',
     'tastypie',
     'account.apps.AccountConfig'
 ]
