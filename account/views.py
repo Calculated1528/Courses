@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
 from .forms import LoginForm,UserRegistrationForm
 from shop.views import index
-
+from django.contrib.auth.views import PasswordResetView
 
 
 def user_login(request):
@@ -35,7 +35,7 @@ def account(request):
 
 
 def change_password(request):
-    template_name = 'account/registration/change_passsword.html'
+    template_name = 'account/registration/change_password.html'
     if request.method == "POST":
         form = PasswordChangeForm(request.user, request.POST)
         if form.is_valid():
