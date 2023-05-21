@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Profile
+from .models import UserInfo
 
 admin.site.site_header = "Admin"
-admin.site.site_title = "Profile"
+admin.site.site_title = "UserInfo"
 admin.site.index_title = "Welcome to the Admin area"
 
-class ProfileAdmin(admin.ModelAdmin):
+class UserInfoAdmin(admin.ModelAdmin):
     list_display = ('user','subscription','followers')
 
-admin.site.register(Profile, ProfileAdmin)
+admin.site.register(UserInfo, UserInfoAdmin)
