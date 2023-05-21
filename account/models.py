@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from blog.models import Post
 
 
-class UserInfo(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,default=5)
-    photo = models.ImageField(default='default.jpg', upload_to='user_photo')
+    photo = models.ImageField(null=True, blank=True, upload_to="media")
     voted_posts = models.ManyToManyField(Post)
     subscription = models.IntegerField(default=0)
     followers = models.IntegerField(default=0)
