@@ -5,8 +5,8 @@
 {% block content %}
 
 <h1 class="mt-5">{{ user.get_username }}</h1>
-<img src="{{ account.profile.photo.url }}" height=100 width=100><br><br>
-{#<p>{{ user.groups.all.0 }}  </p>#}
+{% load static %}
+<img src="{% static userInfo.photo.url %}" alt="My image" height=100 width=100>
 <p><b>E_mail:</b> {{ user.email }}  </p>
 <p><b>Last login:</b> {{ user.last_login }}  </p>
 <p><b>Registration date:</b> {{ user.date_joined }}  </p>

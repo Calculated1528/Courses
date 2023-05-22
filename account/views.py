@@ -4,7 +4,6 @@ from django.contrib.auth import authenticate, login, logout,update_session_auth_
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import LoginForm,UserRegistrationForm
 from shop.views import index
-from django.views.generic.detail import DetailView
 from . models import UserInfo
 
 
@@ -31,9 +30,11 @@ def user_logout(request):
     user_logout = logout(request)
     return render(request,'account/registration/logout.html')
 
+
 def account(request):
-    profile = UserInfo.objects.all()
-    return render(request, 'account/account.html')
+    current_user = request.user
+    userInfo = UserInfo.objects.get(user = current_user)
+    return render(request, 'account/account.html' ,{'userInfo': userInfo})
 
 
 def change_password(request):
@@ -64,15 +65,14 @@ def registration(request):
         user_form = UserRegistrationForm()
     return render(request, 'account/registration/registration.html', {'user_form': user_form})
 
+# class ShowProfilePageView(DetailView):
+#     model = UserInfo
+#     template_name = 'account/account.html'
 
-class ShowProfilePageView(DetailView):
-    model = UserInfo
-    template_name = 'account/account.html'
-
-    def get_context_data(self, *args, **kwargs):
-        users = UserInfo.objects.all()
-        context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-        page_user = get_object_or_404(UserInfo, id=self.kwargs['pk'])
-        context['page_user'] = page_user
-        return context
+#     def get_context_data(self, *args, **kwargs):
+#         users = UserInfo.objects.all()
+#         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
+#         page_user = get_object_or_404(UserInfo, id=self.kwargs['pk'])
+#         context['page_user'] = page_user
+#         return context
     
