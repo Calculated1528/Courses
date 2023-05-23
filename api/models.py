@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # from blog.models import Post, Post_comment
 # from tastypie.authorization import Authorization
 # from .authentication import CustomAuthentication
-
+# # from blog.models import Post, Post_comment
 
 # # Create your models here.
 # class CategoryResource(ModelResource):
@@ -40,3 +40,19 @@ class UserResource(ModelResource):
         resource_name = 'users'
         allowed_metods = ['get']
 
+# class PostResource(ModelResource):
+#     class Meta:
+#         queryset = Post.objects.all()
+#         resource_name = 'posts'
+#         allowed_metods = ['get', 'post', 'delete']
+#         authentication = CustomAuthentication()
+#         authorization = Authorization()
+
+
+# class Post_commentResource(ModelResource):
+#     class Meta:
+#         queryset = Post_comment.objects.all()
+#         resource_name = 'post_comments'
+#         allowed_metods = ['get', 'post', 'delete']
+#         authentication = CustomAuthentication()
+#         authorization = Authorization()
