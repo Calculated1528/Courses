@@ -3,8 +3,9 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from .forms import LoginForm,UserRegistrationForm
-from shop.views import index
+from blog.views import index
 from . models import UserInfo
+
 
 
 def user_login(request):
@@ -76,18 +77,8 @@ def registration(request):
 #         context['page_user'] = page_user
 #         return context
     
-# class ShowProfilePageView(DetailView):
-#     model = UserInfo
-#     template_name = 'account/account.html'
-
-#     def get_context_data(self, *args, **kwargs):
-#         users = UserInfo.objects.all()
-#         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-#         page_user = get_object_or_404(UserInfo, id=self.kwargs['pk'])
-#         context['page_user'] = page_user
-#         return context
-@receiver(signals.post_save, sender = User)
-def create_userinfo(sender, instance, created, *args, **kwargs):
-    if created:
-        UserInfo.objects.create(user=instance)
-        return signals.post_save.connect(create_userinfo, sender=User)
+# @receiver(signals.post_save, sender = User)
+# def create_userinfo(sender, instance, created, *args, **kwargs):
+#     if created:
+#         UserInfo.objects.create(user=instance)
+#         return signals.post_save.connect(create_userinfo, sender=User)

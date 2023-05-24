@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from shop.models import Category, Course
+# from shop.models import Category, Course
 from django.contrib.auth.models import User
 # from blog.models import Post, Post_comment
 # from tastypie.authorization import Authorization

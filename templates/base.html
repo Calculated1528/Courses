@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href={% url "shop:index" %} class="navbar-brand">Courses</a> 
+            <a href={% url "blog:index" %} class="navbar-brand">Courses</a> 
             <span class='navbar-text'>
                 {% if user.is_authenticated %}Hello
                 <a href={% url "account" %} class="me-2">{{ user.get_username }}</a>
