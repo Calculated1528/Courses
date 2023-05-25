@@ -10,10 +10,6 @@ def single_post(request, slug):
 def index(request):
     return render(request, 'blog/home.html')
 
-def detail_view(request):
-    post = get_object_or_404(Post)
-    return render(request, 'detail.html', {'post':post})
-
 def tagged(request, slug):
     tag = get_object_or_404(Tag)
     # Filter posts by tag name  
