@@ -16,7 +16,7 @@
     <tbody>
         {% for post in Posts %}
         <tr>
-            <td><a href={% url 'single_post' post.slug%}>{{ post.title }}</a></td>
+            <td><a href={% url 'blog:single_post' post.slug%}>{{ post.title }}</a></td>
             <td>{{post.user}}</td>
             <td>{{post.views_count}}</td>
             <td>{{post.comments_count}}</td>

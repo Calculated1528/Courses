@@ -5,8 +5,9 @@
 {% block content %}
 <h1 class="mt-5">{{current_post.title}}</h1>
 <h2>{{current_post.title}}</h2>
-<p>Price: {{current_post.views_count}}</p>
-<p>Studets quantity: {{current_post.created_at}}</p>
+<p>Views: {{current_post.views_count}}</p>
+<p>Created at: {{current_post.created_at}}</p>
+<p>Text: {{current_post.text}}</p>
 <button class="btn btn-primary">Read</button>
 {% endblock %}
 
