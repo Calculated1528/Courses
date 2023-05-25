@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <a href={% url "blog:index" %} class="navbar-brand">Courses</a> 
+            <a href={% url "index" %} class="navbar-brand">Blogs</a> 
             <span class='navbar-text'>
                 {% if user.is_authenticated %}
                 {% load static %}
