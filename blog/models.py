@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 import random
 
-class Post(models.Model):  
+
+class Post(models.Model):
     moderation_complete = models.BooleanField(default=False)
     title = models.CharField(max_length=100)
     text = models.TextField()
@@ -16,8 +17,12 @@ class Post(models.Model):
     tags = TaggableManager()
     slug = models.SlugField(unique=True, db_index=True, verbose_name="URL", null=True, max_length=100)
 
-    def __str__(self):
+    def str(self):
         return f'{self.title}'
+    
+    def save(self, *args, **kwargs):
+        self.slug = self.slug(random.seed(self.created_at))
+        super().save(*args, **kwargs)
 
 # class Tag(models.Model):
 #     name = models.CharField(max_length=30)

@@ -13,8 +13,9 @@
         <div class="container">
             <a href={% url "blog:index" %} class="navbar-brand">Courses</a> 
             <span class='navbar-text'>
-                {{ request.path }} 
-                {% if user.is_authenticated %}Hello
+                {% if user.is_authenticated %}
+                {% load static %}
+                <img src="{% static userInfo.photo.url %}" alt="My image" height=30 width=30>
                 <a href={% url "account" %} class="me-2">{{ user.get_username }}</a>
                 {% else %}
                 <a href={% url "login"  %} class="me-2">Login</a>

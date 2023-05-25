@@ -35,9 +35,7 @@ def user_logout(request):
 
 
 def account(request):
-    current_user = request.user
-    userInfo = UserInfo.objects.get(user = current_user)
-    return render(request, 'account/account.html' ,{'userInfo': userInfo})
+    return render(request, 'account/account.html' )
 
 
 def change_password(request):
