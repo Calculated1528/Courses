@@ -5,7 +5,9 @@ from django.contrib.auth.forms import PasswordChangeForm
 from .forms import LoginForm,UserRegistrationForm
 from blog.views import index
 from . models import UserInfo
-
+from django.db.models import signals
+from django.dispatch import receiver
+from django.contrib.auth.models import User
 
 
 def user_login(request):
@@ -65,20 +67,9 @@ def registration(request):
     else:
         user_form = UserRegistrationForm()
     return render(request, 'account/registration/registration.html', {'user_form': user_form})
-
-# class ShowProfilePageView(DetailView):
-#     model = UserInfo
-#     template_name = 'account/account.html'
-
-#     def get_context_data(self, *args, **kwargs):
-#         users = UserInfo.objects.all()
-#         context = super(ShowProfilePageView, self).get_context_data(*args, **kwargs)
-#         page_user = get_object_or_404(UserInfo, id=self.kwargs['pk'])
-#         context['page_user'] = page_user
-#         return context
     
-# @receiver(signals.post_save, sender = User)
-# def create_userinfo(sender, instance, created, *args, **kwargs):
-#     if created:
-#         UserInfo.objects.create(user=instance)
-#         return signals.post_save.connect(create_userinfo, sender=User)
+@receiver(signals.post_save, sender = User)
+def create_userinfo(sender, instance, created, *args, **kwargs):
+    if created:
+        UserInfo.objects.create(user=instance)
+        return signals.post_save.connect(create_userinfo, sender=User)

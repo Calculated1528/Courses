@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
-
+import random
 
 class Post(models.Model):  
     moderation_complete = models.BooleanField(default=False)
@@ -14,6 +14,7 @@ class Post(models.Model):
     created_at = models.DateField(default=timezone.now)
     post_rating = models.IntegerField(default=0)
     tags = TaggableManager()
+    slug = models.SlugField(unique=True, db_index=True, verbose_name="URL", null=True, max_length=100)
 
     def __str__(self):
         return f'{self.title}'
