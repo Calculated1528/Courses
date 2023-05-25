@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'blog.apps.BlogConfig',
     'tastypie',
+    'taggit',
     'account.apps.AccountConfig'
 ]
 
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'account.context_processors.GetUserInfo', 
                 'django.contrib.messages.context_processors.messages',
             ],
         },
