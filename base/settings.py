@@ -37,12 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop.apps.ShopConfig',
     'api.apps.ApiConfig',
     'blog.apps.BlogConfig',
     'tastypie',
-    'taggit',
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+    'taggit'
 ]
 
 MIDDLEWARE = [

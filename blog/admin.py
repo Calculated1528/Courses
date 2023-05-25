@@ -18,6 +18,6 @@ class PostsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostsAdmin)
-# admin.site.register(Tag)
+
 # admin.site.register(Post_comment, Post_commentsAdmin)
 
