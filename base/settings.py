@@ -37,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop.apps.ShopConfig',
     'api.apps.ApiConfig',
     'blog.apps.BlogConfig',
     'tastypie',
-    'account.apps.AccountConfig'
+    'account.apps.AccountConfig',
+    'taggit'
 ]
 
 MIDDLEWARE = [
@@ -66,6 +66,8 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'account.context_processors.GetUserInfo', 
+                'blog.context_processors.GetPost',
                 'django.contrib.messages.context_processors.messages',
             ],
         },
@@ -137,6 +139,4 @@ EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 MEDIA_URL = '/media/'
 
-
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'account/static/media/') 

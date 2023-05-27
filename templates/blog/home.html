@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}All Posts{% endblock %} 
+
+{% block content %}
+<table class="table mt-5 table-bordered table-striped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>views</th>
+            <th>Comments</th>
+            <th>Date of creation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in Posts %}
+        <tr>
+            <td><a href={% url 'blog:single_post' post.slug%}>{{ post.title }}</a></td>
+            <td>{{post.user}}</td>
+            <td>{{post.views_count}}</td>
+            <td>{{post.comments_count}}</td>
+            <td>{{post.created_at}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
