@@ -11,17 +11,27 @@
     <title>{% block title %}{% endblock %}</title>
     
 </head>
-<body>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a href={% url "blog:index" %} class="navbar-brand">Blogs</a> 
-            <span class='navbar-text'>
+<body class="body_all">
+    <div class="header_m">
+        <div class="header_left">
+            <a href={% url "blog:index" %} class="header-brand">Blogs</a> 
+        </div>
+        <div class="header_search">
+            <span class="icon_search">
+                <i class="fa fa-search">
+    
+                </i>
+                Поиск
+            </span>
+        </div>
+        <div class="header_right">
+            <span class='header-text'>
                 {% if user.is_authenticated %}
                 {% load static %}
                 <img src="{% static userInfo.photo.url %}" alt="My image" height=30 width=30>
-                <a href={% url "account" %} class="me-2">{{ user.get_username }}</a>
+                <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
                 {% else %}
-                <a href={% url "login"  %} class="me-2">Login</a>
+                <a href={% url "login"  %} class="header_menu">Login</a>
                 {% endif %}
                 <a href="/admin/" class="header_menu" target="_blank">Admin</a>
                 <a href="/api/v1/" class="header_menu" target="_blank">API</a>
@@ -34,11 +44,12 @@
         </div>
     </div>
 
-<br>
+    <br>
 
     
-    <main class="container">
+    <div class="body_down">
         {% block content %}
         {% endblock %}
+    </div>
 </body>
 </html>
