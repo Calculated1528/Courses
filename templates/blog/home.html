@@ -28,35 +28,25 @@
 <div class="articles">
     <div class="article">
         <div class="article_name">
-            <span>
-                Title
-            </span>
+            Title
         </div>
         <div class="article_author">
-            <span>
                 Author
-            <span/>
         </div>
         <div class="article_view">
-            <span>
                 Views
-            </span>
         </div>
         <div class="article_comment">
-            <span>
                 Comments
-            </span>
         </div>
         <div class="article_date">
-            <span>
                 Date of creation
-            </span>
         </div>
     </div>
     {% for post in Posts %}
     <div class="article">
         <div class="article_name">
-            <a href={% url 'blog:single_post' post.slug%}>{{ post.title }}</a>
+            <a href={% url 'blog:single_post' post.slug%} class="link-style">{{ post.title }}</a>
         </div>
         <div class="article_author">
             {{post.user}}

@@ -4,7 +4,7 @@
 }
 
 .body_all {
-    background-color: #e8e8e8;
+    background-color: #f3f3f3;
 }
 
 .header_m{
@@ -52,7 +52,7 @@
 .header_right{
     float: right;
     height: 45px;
-    width: 250px;
+    width: 350px;
     text-align: center;
     margin-top: 2px;
     margin-right: 10%;
@@ -112,7 +112,7 @@
 .header-text{
     color: white;
     height: 45px;
-    width: 100px;
+    width: 200px;
     text-align: center;
     padding-top: 10px;
     float: right;
@@ -131,7 +131,7 @@
     margin-left: 10%;
     margin-top: 60px;
     width: 1200px;
-    height: 30px;
+    height: auto;
 }
 
 .body_search_text{
@@ -148,17 +148,25 @@
 .articles{
     margin-top: 30px;
     height: auto;
-    background: white;
+    background-color: white;
     width: 1185px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
-    border: 5px;
-    border-color: rgb(172, 55, 55);
+    float: left;
+    border-width: 1px;
+    border-color: rgb(206, 206, 206);
+    border-style: solid;
 }
 
 .article{
-    width: 1180px;
+    width: auto;
     height: auto;
-    border-bottom: rgb(206, 206, 206) 1px;
+    float: left;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .article_name{
@@ -167,10 +175,11 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    padding-left: 10px;
     color: black;
-    width: 640px;
-    border-right: 1px rgb(206, 206, 206);
+    width: 693px;
+    border-right: 4px;
+    border-right: 1px solid rgb(206, 206, 206);
+    text-decoration: none;
 }
 
 .article_author{
@@ -179,10 +188,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    margin-left: 10px;
+    padding-left: 10px;
     color: black;
     width: 190px;
-    border-right: 1px rgb(206, 206, 206);
+    border-right: 1px solid rgb(206, 206, 206);
 }
 
 .article_view{
@@ -191,10 +200,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    margin-left: 10px;
+    padding-left: 10px;
     color: black;
-    width: 90px;
-    border-right: 1px rgb(206, 206, 206);
+    width: 60px;
+    border-right: 1px solid rgb(206, 206, 206);
 }
 
 .article_comment{
@@ -203,10 +212,10 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    margin-left: 10px;
+    padding-left: 10px;
     color: black;
     width: 90px;
-    border-right: 1px rgb(158, 54, 54);
+    border-right: 1px solid rgb(206, 206, 206);
 }
 
 .article_date{
@@ -215,15 +224,12 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 15px;
-    margin-left: 10px;
+    padding-left: 10px;
     color: black;
-    width: 90px;
+    width: 130px;
 }
 
-.article_line{
-    width: 1175;
-    background: rgb(206, 206, 206);
-    height: 1px;
-    border-top: none;
-    border-bottom: none;
+.link-style{
+    color: black;
+    text-decoration: none;
 }
