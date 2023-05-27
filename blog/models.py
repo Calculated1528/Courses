@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
-import random
+import random,string
 
 
 class Post(models.Model):
@@ -15,13 +16,13 @@ class Post(models.Model):
     created_at = models.DateField(default=timezone.now)
     post_rating = models.IntegerField(default=0)
     tags = TaggableManager()
-    slug = models.SlugField(unique=True, db_index=True, verbose_name="URL", null=True, max_length=100)
+    slug = models.SlugField(unique=True, db_index=True, verbose_name="URL", null=True,blank=True, max_length=100)
 
     def str(self):
         return f'{self.title}'
     
     def save(self, *args, **kwargs):
-        self.slug = self.slug(random.seed(self.created_at))
+        self.slug = slugify(''.join(random.choices(string.ascii_uppercase + string.digits, k=12)))
         super().save(*args, **kwargs)
 
 # class Tag(models.Model):

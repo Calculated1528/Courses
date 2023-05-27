@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{current_post.title}}{% endblock %} 
+
+{% block content %}
+<h1 class="mt-5">{{current_post.title}}</h1>
+<h2>{{current_post.title}}</h2>
+<p>Views: {{current_post.views_count}}</p>
+<p>Created at: {{current_post.created_at}}</p>
+<p>Text: {{current_post.text}}</p>
+<button class="btn btn-primary">Read</button>
+{% endblock %}
+
+           
