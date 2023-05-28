@@ -5,7 +5,8 @@ from taggit.models import Tag
 
 def single_post(request, slug):
     current_post = get_object_or_404(Post , slug = slug)
-    return render(request, 'blog/single_post.html', {'current_post': current_post})
+    tags = Tag.objects.filter(id = current_post.id)
+    return render(request, 'blog/single_post.html', {'tags': tags, 'current_post': current_post, 'back_url': request.META.get('HTTP_REFERER')})
 
 def index(request):
     return render(request, 'blog/home.html')
@@ -15,3 +16,4 @@ def tagged(request, slug):
     # Filter posts by tag name  
     posts = Post.objects.filter(tags=tag)
     return render(request, 'blog/home.html', {'tag':tag, 'posts':posts})
+

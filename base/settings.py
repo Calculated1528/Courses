@@ -69,6 +69,7 @@ TEMPLATES = [
                 'account.context_processors.GetUserInfo', 
                 'blog.context_processors.GetPost',
                 'django.contrib.messages.context_processors.messages',
+                'account.context_processors.savingPage', 
             ],
         },
     },

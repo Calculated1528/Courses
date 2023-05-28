@@ -13,6 +13,7 @@
         <div class="container">
             <a href={% url "blog:index" %} class="navbar-brand">Blogs</a> 
             <span class='navbar-text'>
+                <a> {{ last_page }}</a>
                 {% if user.is_authenticated %}
                 {% load static %}
                 <img src="{% static userInfo.photo.url %}" alt="My image" height=30 width=30>
