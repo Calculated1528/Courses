@@ -9,6 +9,7 @@ def GetUserInfo(request):
         return {'userInfo': UserInfo}
 
 
+
 def savingPage(request):
     last_page = request.META.get('HTTP_REFERER')
     return {'last_page': last_page} 
