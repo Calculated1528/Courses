@@ -28,8 +28,10 @@
             <span class='header-text'>
                 {% if user.is_authenticated %}
                 {% load static %}
-                <img src="{% static userInfo.photo.url %}" alt="My image" height=30 width=30>
-                <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
+                <img src="{% static userInfo.photo.url %}" alt="My image" onclick="oncl()" class="img_icon">
+                <div class ="header_menu_burger">
+                    <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
+                </div>
                 {% else %}
                 <a href={% url "login"  %} class="header_menu">Login</a>
                 {% endif %}
@@ -51,5 +53,6 @@
         {% block content %}
         {% endblock %}
     </div>
+    <script src="{% static "JavaScript/main.js" %}"></script>
 </body>
 </html>

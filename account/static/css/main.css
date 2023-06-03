@@ -68,22 +68,12 @@
 }
 
 .img_icon{
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
 }
 
 .img_icon:hover{
-    cursor: pointer;
-}
-
-.img_logo{
-    height: 40px;
-    width: 40px;
-    border-radius: 5px;
-}
-
-.img_logo:hover{
     cursor: pointer;
 }
 
@@ -94,7 +84,6 @@
     text-align: center;
     margin-top: 10px;
     border-radius: 5px;
-    margin-right: 10px;
 }
 
 .header_pen:hover{
@@ -125,6 +114,18 @@
     text-align: center;
     text-decoration: none;
     margin-left: 5px;
+}
+
+.header_menu_burger{
+    position: fixed;
+    top: 1000px;
+    right: 17%;
+    background-color: rgba(33, 134, 234, 0.696);
+    height: auto;
+    width: auto;
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
 }
 
 .body_down{
