@@ -29,9 +29,6 @@
                 {% if user.is_authenticated %}
                 {% load static %}
                 <img src="{% static userInfo.photo.url %}" alt="My image" onclick="oncl()" class="img_icon">
-                <div class ="header_menu_burger">
-                    <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
-                </div>
                 {% else %}
                 <a href={% url "login"  %} class="header_menu">Login</a>
                 {% endif %}
@@ -45,8 +42,12 @@
             </div> 
         </div>
     </div>
-
     <br>
+    {% if user.is_authenticated %}
+    <div class ="header_menu_burger">
+        <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
+    </div>
+    {% endif %}
 
     
     <div class="body_down">
