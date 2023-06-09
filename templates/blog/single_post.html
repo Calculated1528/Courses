@@ -13,11 +13,11 @@
 <p>Created at: {{current_post.created_at}}</p>
 <p>Text: {{current_post.text}}</p>
 
-{% with comments.count as total_comments %}
+{% comment %} {% with comments.count as total_comments %}
     <h2>
         {{ total_comments }} comment{{ total_comments|pluralize }}
     </h2>
-{% endwith %}
+{% endwith %} {% endcomment %}
 
 {% for comments in PostComments %}
     <div class="comment">

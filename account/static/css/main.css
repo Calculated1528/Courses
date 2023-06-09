@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body_all {
+    background-color: #f3f3f3;
+}
+
+.header_m{
+    background: rgb(55, 105, 212);
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    z-index: 5;
+}
+
+.header_left{
+    float: left;
+    height: 45px;
+    width: 40px;
+    margin-left: 10%;
+    text-align: center;
+    margin-top: 2px;
+    padding-top: 10px;
+}
+.header-brand{
+    color: white;
+    height: 45px;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header_search:hover{
+    background: rgb(62, 119, 242);
+    cursor: pointer;
+}
+
+.header_search{
+    float: left;
+    height: 30px;
+    width: 70px;
+    padding-top: 3px;
+    text-align: center;
+    margin-left: 500px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+.header_right{
+    float: right;
+    height: 45px;
+    width: 350px;
+    text-align: center;
+    margin-top: 2px;
+    margin-right: 10%;
+}
+
+.fa-search{
+    color: white;
+    
+}
+
+.fa-pencil{
+    color: white;
+}
+
+.img_icon{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+
+.img_icon:hover{
+    cursor: pointer;
+}
+
+.header_pen{
+    height: 25px;
+    width: 25px;
+    float: right;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.header_pen:hover{
+    background: rgb(62, 119, 242);
+    cursor: pointer;
+}
+
+.header_logo{
+    height: 45px;
+    width: 40px;
+    float: left;
+    margin-left: 10px;
+}
+
+.header-text{
+    color: white;
+    height: 45px;
+    width: 200px;
+    text-align: center;
+    padding-top: 10px;
+    float: right;
+}
+
+.header_menu{
+    color: white;
+    height: 45px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.header_menu_burger{
+    position: fixed;
+    top: -100px;
+    right: 17%;
+    background-color: rgba(33, 134, 234, 0.696);
+    height: auto;
+    width: auto;
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    transition: all 0.3s ease 0s;
+    z-index: 2;
+}
+
+.body_down{
+    margin-left: 10%;
+    margin-top: 60px;
+    width: 1200px;
+    height: auto;
+}
+
+.body_search_text{
+    width: 1175px;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 10px;
+    border-top: 1px solid rgb(196, 196, 196);
+    border-left: 1px solid rgb(196, 196, 196);
+    border-right: 1px solid rgb(196, 196, 196);
+    border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.articles{
+    margin-top: 30px;
+    height: auto;
+    background-color: white;
+    width: 1185px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    float: left;
+    border-width: 1px;
+    border-color: rgb(206, 206, 206);
+    border-style: solid;
+}
+
+.article{
+    width: auto;
+    height: auto;
+    float: left;
+    border-bottom: 1px solid rgb(206, 206, 206);
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.article_name{
+    float: left;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    color: black;
+    width: 693px;
+    border-right: 4px;
+    border-right: 1px solid rgb(206, 206, 206);
+    text-decoration: none;
+}
+
+.article_author{
+    float: left;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    color: black;
+    width: 190px;
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+.article_view{
+    float: left;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    color: black;
+    width: 60px;
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+.article_comment{
+    float: left;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    color: black;
+    width: 90px;
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+.article_date{
+    float: left;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 15px;
+    padding-left: 10px;
+    color: black;
+    width: 130px;
+}
+
+.link-style{
+    color: black;
+    text-decoration: none;
+}
