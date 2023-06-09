@@ -25,18 +25,12 @@ class Post(models.Model):
         self.slug = slugify(''.join(random.choices(string.ascii_uppercase + string.digits, k=12)))
         super().save(*args, **kwargs)
 
-# class Tag(models.Model):
-#     name = models.CharField(max_length=30)
-#     posts = models.ManyToManyField(Post)
 
-#     def __str__(self):
-#         return f'{self.name}'
+class PostComment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    text = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=5)
+    created_at = models.DateField(default=timezone.now)
 
-# class Post_comment(models.Model):
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-#     text = models.TextField()
-#     user = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default=5)
-#     created_at = models.DateField(default=timezone.now)
-
-#     def __str__(self):
-#         return f'{self.text}'
+    def __str__(self):
+        return f'{self.text}'
