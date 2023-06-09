@@ -26,6 +26,7 @@
         </div>
         <div class="header_right">
             <span class='header-text'>
+                {% comment %} <a> {{ last_page }}</a> {% endcomment %}
                 {% if user.is_authenticated %}
                 {% load static %}
                 <img src="{% static userInfo.photo.url %}" alt="My image" onclick="oncl()" class="img_icon">
