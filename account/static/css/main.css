@@ -68,6 +68,14 @@
     color: white;
 }
 
+.fa-sign-out{
+    color: white;
+}
+
+.fa-user{
+    color: white;
+}
+
 .img_icon{
     height: 30px;
     width: 30px;
@@ -236,4 +244,68 @@
 .link-style{
     color: black;
     text-decoration: none;
+}
+
+.user_table{
+    margin-top: 30px;
+    height: auto;
+    background-color: white;
+    width: 1185px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    float: left;
+    border-width: 1px;
+    border-color: rgb(206, 206, 206);
+    border-style: solid;
+}
+
+.user_table_icon{
+    float: left;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: auto;
+}
+
+.user_table_icon_img{
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+}
+
+.user_table_name{
+    float: left;
+    height: auto;
+    margin-top: 25px;
+    font-size: 20px;
+    margin-left: 10px;
+    color: black;
+    width: auto;
+}
+
+.user_table_date{
+    float: right;
+    height: auto;
+    margin-top: 10px;
+    font-size: 15px;
+    margin-right: 10px;
+    color: rgb(158, 158, 158);
+    width: auto;
+}
+
+.buttons{
+    height: auto;
+    margin-top: 10px;
+    background-color: rgb(73, 200, 255);
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+    border-width: 0px;
+    color: white;
+}
+
+.buttons:hover{
+    background: rgb(0, 179, 255);
+    cursor: pointer;
 }

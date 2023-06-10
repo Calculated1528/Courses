@@ -4,9 +4,9 @@
 
 {% block content %}
 
-<h1 class="mt-5">{{ user.get_username }}</h1>
+{% comment %} <h1 class="mt-5">{{ user.get_username }}</h1> {% endcomment %}
 {% load static %}
-<img src="{% static userInfo.photo.url %}" alt="My image" height=100 width=100>
+{% comment %} <img src="{% static userInfo.photo.url %}" alt="My image" height=100 width=100>
 <p><b>E_mail:</b> {{ user.email }}  </p>
 <p><b>Last login:</b> {{ user.last_login }}  </p>
 <p><b>Registration date:</b> {{ user.date_joined }}  </p>
@@ -14,6 +14,25 @@
 <p><b>  </b></p>
 <p><b> <a href={% url 'blog:create_post' %} class="me-2"><button class="btn btn-primary">Create post</button></a> </b></p>
 <p><b> <a href={% url "change_password" %} class="me-2"><button class="btn btn-primary">Password change</button></a> </b></p>
-<p><b> <a href={% url "logout" %} class="me-2"><button class="btn btn-primary">Logout</button></a> </b></p>
+<p><b> <a href={% url "logout" %} class="me-2"><button class="btn btn-primary">Logout</button></a> </b></p> {% endcomment %}
+
+
+
+<div class="user_table">
+    <div class="user_table_icon">
+        <img src="{% static userInfo.photo.url %}" alt="My image" class="user_table_icon_img">
+    </div>
+    <div class="user_table_name">
+        {{ user.get_username }}
+    </div>
+    <div class="user_table_date">
+        Registration date: {{ user.date_joined }}
+    </div>
+    <br><br>
+    <div class="user_table_date">
+        Last login: {{ user.last_login }}
+    </div>
+</div>
+<a href={% url "change_password" %} class="me-2"><button class="buttons">Password change</button></a>
 
 {% endblock content %}

@@ -37,16 +37,26 @@
                 <a href="/api/v1/" class="header_menu" target="_blank">API</a>
             </span> 
             <div class="header_pen">
-                <i class="fa fa-pencil">
+                <a href={% url 'blog:create_post' %} class="header_menu">
+                    <i class="fa fa-pencil">
 
-                </i>
+                    </i>
+                </a>
             </div> 
         </div>
     </div>
     <br>
     {% if user.is_authenticated %}
     <div class ="header_menu_burger">
-        <a href={% url "account" %} class="header_menu">{{ user.get_username }}</a>
+        <a href={% url "account" %} class="header_menu">
+            <i class="fa fa-user fa-fw"></i>
+            {{ user.get_username }}
+        </a>
+        <br>
+        <a href={% url "logout" %} class="header_menu">
+            <i class="fa fa-sign-out fa-fw"></i>
+            Logout
+        </a>
     </div>
     {% endif %}
 
