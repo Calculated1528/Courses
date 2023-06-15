@@ -13,6 +13,9 @@
 </head>
 <body class="body_all">
     <div class="header_m">
+        <div class="mobile_x" onclick="mobileoncl()">
+            <span class="mobile_x"></span>
+        </div>
         <div class="header_left">
             <a href={% url "blog:index" %} class="header-brand">Blogs</a> 
         </div>
@@ -57,6 +60,30 @@
             <i class="fa fa-sign-out fa-fw"></i>
             Logout
         </a>
+    </div>
+    <div class ="mobile_header_menu_burger">
+        <div class="top_mobile_header_menu_burger">
+            <div class="top_mobile_x" onclick="mobileoncl()">
+                <span></span>
+            </div>
+        </div>
+        <img src="{% static userInfo.photo.url %}" alt="My image" class="mobile_img_icon">
+        <a href={% url "account" %} class="mobile_header_menu">
+            {{ user.get_username }}
+        </a>
+        <br>
+        <a href={% url "logout" %} class="mobile_header_menu">
+            Logout
+        </a>
+    </div>
+    {% else %}
+    <div class ="mobile_header_menu_burger">
+        <div class="top_mobile_header_menu_burger">
+            <div class="top_mobile_x" onclick="mobileoncl()">
+                <span></span>
+            </div>
+        </div>
+        <a href={% url "login"  %} class="header_menu">Login</a>
     </div>
     {% endif %}
 
