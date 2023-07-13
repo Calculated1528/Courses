@@ -1,4 +1,5 @@
 __pycache__
 env
 sent_emails
+db.sqlite3
 .vscode/
