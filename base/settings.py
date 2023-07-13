@@ -69,6 +69,7 @@ TEMPLATES = [
                 'account.context_processors.GetUserInfo', 
                 'blog.context_processors.GetPost',
                 'django.contrib.messages.context_processors.messages',
+                'account.context_processors.savingPage', 
             ],
         },
     },
@@ -121,6 +122,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+STATIC_ROOT = ''
 
 STATIC_URL = 'static/'
 

@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout,update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
@@ -10,22 +10,29 @@ from django.dispatch import receiver
 from django.contrib.auth.models import User
 
 
+# def login(request):
+#     last_page = request.META.get('HTTP_REFERER')
+#     return user_login(request, last_page)
+
 def user_login(request):
+    # last_page = request.META.get('HTTP_REFERER')
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
             user = authenticate(username=cd['username'], password=cd['password'])
+            returnUrl = '/' if cd["returnUrl"] == '' else cd["returnUrl"]
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return index(request)
+                    return HttpResponseRedirect(returnUrl)
+                    # return index(request)
                 else:
                     return HttpResponse('Disabled account')
             else:
                 return HttpResponse('Invalid login or password')
     else:
-        form = LoginForm()
+        form = LoginForm(initial={"returnUrl": request.META.get('HTTP_REFERER', '/')})
     return render(request, 'account/registration/login.html', {'form': form})
 
 
